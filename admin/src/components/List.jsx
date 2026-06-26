@@ -4,32 +4,28 @@ import { useState, useEffect } from "react";
 
 const List = () => {
   const [products, setProducts] = useState([]);
-  const url="http://localhost:3000"
+  const url = "https://my-market-backend-i231.onrender.com";
   const fetchProducts = async () => {
-      const res =await axios.get(`${url}/api/product/list`)
-      if(res.data.success){
-        setProducts(res.data.data)
+    const res = await axios.get(`${url}/api/product/list`);
+    if (res.data.success) {
+      setProducts(res.data.data);
+    } else {
+      console.log("error");
+    }
+  };
+  useEffect(() => {
+    fetchProducts();
+  }, []);
+  const handleDelete = async (id) => {
+    const res = await axios.post(`${url}/api/product/remove`, { id: id });
+    await fetchProducts();
+    if (res.data.success) {
+      console.log("success");
+    } else {
+      console.log("error");
+    }
+  };
 
-        
-      }else{
-        console.log("error")
-      }
-      
-    };
-useEffect(()=>{
-  fetchProducts()
-},[])
-    const handleDelete=async(id)=>{
-const res = await axios.post(`${url}/api/product/remove`, { id: id });
-await fetchProducts()
-if(res.data.success){
-  console.log("success")
-}else{
-  console.log("error")
-}
-}
-  
-  
   return (
     <section
       className="relative w-full min-h-screen  bg-linear-to-r from-green-700 via-green-600 to-green-500
@@ -51,9 +47,12 @@ if(res.data.success){
               <h3 className="text-lg font-semibold">{product.name}</h3>
               <p className="text-yellow-300 font-bold mb-2">${product.price}</p>
               <p className="text-gray-200 mb-4">{product.category}</p>
-            <button onClick={()=>handleDelete(product._id)} className="bg-red-500 px-4 py-2 rounded-xl text-white font-semibold hover:bg-red-600 transition-all">
-              حذف
-            </button>
+              <button
+                onClick={() => handleDelete(product._id)}
+                className="bg-red-500 px-4 py-2 rounded-xl text-white font-semibold hover:bg-red-600 transition-all"
+              >
+                حذف
+              </button>
             </div>
           ))}
         </div>

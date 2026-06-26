@@ -5,20 +5,20 @@ import { useEffect } from "react";
 import { Shield, Trash, User } from "lucide-react";
 
 const Users = () => {
-  const url = "http://localhost:3000";
+  const url = "https://my-market-backend-i231.onrender.com";
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
 
   const demoteToUser = async (id) => {
-    console.log("id:",id);
+    console.log("id:", id);
     try {
       await axios.put(`${url}/api/users/demote/${id}`);
       setUsers((prev) =>
-         prev.map((u) => u._id === id ? { ...u, role: "user" } : u)
+        prev.map((u) => (u._id === id ? { ...u, role: "user" } : u)),
       );
       alert("تم إعادة المستخدم إلى مستخدم عادي بنجاح");
     } catch (error) {
-      console.error("error",error);
+      console.error("error", error);
       alert("حدث خطأ أثناء إعادة المستخدم إلى مستخدم عادي");
     }
   };
@@ -26,7 +26,9 @@ const Users = () => {
   const promoteToAdmin = async (id) => {
     try {
       await axios.put(`${url}/api/users/make-admin/${id}`);
-      setUsers((prev) =>  prev.map((u) => u._id === id ? { ...u, role: "admin" } : u));
+      setUsers((prev) =>
+        prev.map((u) => (u._id === id ? { ...u, role: "admin" } : u)),
+      );
       alert("تم ترقية المستخدم إلى أدمن بنجاح");
     } catch (error) {
       console.error("خطأ غي الترقية", error);
@@ -70,7 +72,7 @@ const Users = () => {
     fetchUsers();
   }, []);
   return (
-<section
+    <section
       className="relative w-full min-h-screen  bg-linear-to-r from-green-700 via-green-600 to-green-500
      text-white py-24 px-6 sm:px-10"
     >
@@ -82,7 +84,7 @@ const Users = () => {
           <div className="text-center text-gray-300 text-lg">
             جاري تحميل المستخدمين......
           </div>
-        ):users.length === 0 ? (
+        ) : users.length === 0 ? (
           <div className="text-center text-gray-400 text-lg">
             لا يوجد مستخدمين حالياً
           </div>
@@ -129,21 +131,17 @@ const Users = () => {
                   disabled={user.role === "admin"}
                   className={`flex items-center gap-2  px-4 py-2 rounded-lg font-semibold transition-all mb-3 ${user.role === "admin" ? "bg-gray-500/40 cursor-not-allowed" : "bg-yellow-500 hover:bg-yellow-600"}`}
                 >
-                <Shield className="w-5 h-5" />
-                  {user.role === "admin" ? "مدير":"الترقية إلى أدمن" }
+                  <Shield className="w-5 h-5" />
+                  {user.role === "admin" ? "مدير" : "الترقية إلى أدمن"}
                 </button>
-
-
-
 
                 <button
                   onClick={() => demoteToUser(user._id)}
                   disabled={user.role !== "admin"}
                   className={`flex items-center gap-2  px-4 py-2 rounded-lg font-semibold transition-all ${user.role !== "admin" ? "bg-gray-500/40 cursor-not-allowed" : "bg-indigo-500 hover:bg-indigo-600"}`}
                 >
-                    <User className="w-5 h-5" />
+                  <User className="w-5 h-5" />
                   إعادة إلى مستخدم
-               
                 </button>
               </div>
             ))}
