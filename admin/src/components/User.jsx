@@ -5,7 +5,7 @@ import { useEffect } from "react";
 import { Shield, Trash, User } from "lucide-react";
 
 const Users = () => {
-  const url = "https://my-market-backend-i231.onrender.com";
+  const url = "https://my-market-backend-i23l.onrender.com";
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
 

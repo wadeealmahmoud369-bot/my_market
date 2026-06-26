@@ -12,7 +12,7 @@ const ShopContextProvider = ({ children }) => {
       return {};
     }
   });
-  const url = "https://my-market-backend-i231.onrender.com";
+  const url = "https://my-market-backend-i23l.onrender.com";
 
   const [token, setToken] = useState("");
   const [products, setProducts] = useState([]);

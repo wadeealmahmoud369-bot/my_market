@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 const Add = () => {
-  const url = "https://my-market-backend-i231.onrender.com";
+  const url = "https://my-market-backend-i23l.onrender.com";
   const [image, setImage] = useState(null);
   const [data, setData] = useState({
     name: "",

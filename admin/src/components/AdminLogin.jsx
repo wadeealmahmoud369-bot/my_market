@@ -6,7 +6,7 @@ import axios from "axios";
 const AdminLogin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const url = "https://my-market-backend-i231.onrender.com/api/admin/login";
+  const url = "https://my-market-backend-i23l.onrender.com/api/admin/login";
   const navigate = useNavigate();
   useEffect(() => {
     const token = localStorage.getItem("adminToken");

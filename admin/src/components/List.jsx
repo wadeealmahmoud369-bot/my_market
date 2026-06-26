@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 
 const List = () => {
   const [products, setProducts] = useState([]);
-  const url = "https://my-market-backend-i231.onrender.com";
+  const url = "https://my-market-backend-i23l.onrender.com";
   const fetchProducts = async () => {
     const res = await axios.get(`${url}/api/product/list`);
     if (res.data.success) {

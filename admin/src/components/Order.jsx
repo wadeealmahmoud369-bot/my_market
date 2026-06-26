@@ -5,7 +5,7 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import { useEffect } from "react";
 const Order = () => {
-  const url = "https://my-market-backend-i231.onrender.com";
+  const url = "https://my-market-backend-i23l.onrender.com";
   const [orders, setOrders] = useState([]);
   const [loading, setLoading] = useState(true);
   const fetchOrders = async () => {

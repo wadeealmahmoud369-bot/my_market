@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-const url = "https://my-market-backend-i231.onrender.com";
+const url = "https://my-market-backend-i23l.onrender.com";
 import { ShopContext } from "../context/ShopContext";
 import { useNavigate } from "react-router-dom";
 import { Minus, Plus, ShoppingBag, Trash2 } from "lucide-react";
