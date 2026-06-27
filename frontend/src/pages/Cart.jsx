@@ -58,7 +58,7 @@ const Cart = () => {
                       className="w-24 h-24 object-contain rounded-xl"
                     />
                     <div>
-                      <h3 className="text-xl font-semibold  ">{item.name}</h3>
+                      <h3 className="text-xl font-semibold truncate max-w-sm  ">{item.name}</h3>
                       <p className="text-yellow-400 text-2xl font-bold bt-2">
                         $ {item.price}
                       </p>
