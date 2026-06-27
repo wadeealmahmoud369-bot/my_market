@@ -67,7 +67,7 @@ const Categories = () => {
                 />
               </div>
               <div className="p-5 text-left">
-                <h2 className=" font-semibold mb-2 truncate">
+                <h2 className=" font-semibold mb-2 truncate max-w-2xl">
                   {product.name}
                 </h2>
 
