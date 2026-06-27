@@ -100,12 +100,12 @@ useEffect(()=>{
               {cartProduct.map((items) => (
                 <div
                   key={items._id}
-                  className="flex items-center gap-4 bg-white/10 p-4
+                  className=" flex flex-wrap sm:flex-nowrap items-center gap-4 bg-white/10 p-4
    rounded-2xl shadow-lg border border-white/20"
                 >
                   <img
                     src={`${url}/image/${items.image}`}
-                    className="w-20 h-20 object-contain rounded-xl"
+                    className="w-20 h-20  object-contain rounded-xl"
                   />
                   <div className="flex-1 min-w-0">
                     <h3 className="text-lg font-semibold truncate">{items.name}</h3>
