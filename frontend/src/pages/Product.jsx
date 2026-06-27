@@ -25,19 +25,19 @@ const Product = () => {
   return (
     <section
       className="relative w-full min-h-screen bg-linear-to-r from-green-700 via-green-600 to-green-500
-    text-white py-24 px-6 sm:px-10 flex items-center justify-center"
+    text-white py-24  sm:px-10"
     >
       <div
-        className=" w-full max-w-6xl mx-auto bg-white/10 backdrop-blur-md 
+        className="  max-w-6xl mx-auto bg-white/10 backdrop-blur-md 
       rounded-3xl p-10 flex flex-col md:flex-row gap-10 shadow-2xl"
       >
-        <div className=" w-full md:w-1/2 flex items-center justify-center bg-white/5 rounded-3xl p-6">
+        <div className="  md:w-1/2 flex items-center justify-center bg-white/5 rounded-3xl p-6">
           <img
             src={`${url}/image/${product.image}`}
             className="w-64 h-55 object-center rounded-2xl"
           />
         </div>
-        <div className="w-full md:w-1/2">
+        <div className="flex flex-col gap-6">
           <h2 className="text-4xl font-extrabold gap-6 mb-5">
             {product.name} -
           </h2>
