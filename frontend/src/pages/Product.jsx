@@ -28,16 +28,16 @@ const Product = () => {
     text-white py-24 px-6 sm:px-10 flex items-center justify-center"
     >
       <div
-        className="maxw w-6xl mx-auto bg-white/10 backdrop-blur-md 
+        className=" w-full max-w-6xl mx-auto bg-white/10 backdrop-blur-md 
       rounded-3xl p-10 flex flex-col md:flex-row gap-10 shadow-2xl"
       >
-        <div className="md:w-1/2 flex items-center justify-center bg-white/5 rounded-3xl p-6">
+        <div className=" w-full md:w-1/2 flex items-center justify-center bg-white/5 rounded-3xl p-6">
           <img
             src={`${url}/image/${product.image}`}
             className="w-64 h-55 object-center rounded-2xl"
           />
         </div>
-        <div className="">
+        <div className="w-full md:w-1/2">
           <h2 className="text-4xl font-extrabold gap-6 mb-5">
             {product.name} -
           </h2>
