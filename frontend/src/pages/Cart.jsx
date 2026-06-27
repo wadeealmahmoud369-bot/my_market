@@ -57,8 +57,8 @@ const Cart = () => {
                       src={`${url}/image/${item.image}`}
                       className="w-24 h-24 object-contain rounded-xl"
                     />
-                    <div>
-                      <h3 className="text-xl font-semibold truncate max-w-sm  ">{item.name}</h3>
+                    <div className="flex-1 min-w-0">
+                      <h3 className=" text-xl font-semibold truncate ">{item.name}</h3>
                       <p className="text-yellow-400 text-2xl font-bold bt-2">
                         $ {item.price}
                       </p>
