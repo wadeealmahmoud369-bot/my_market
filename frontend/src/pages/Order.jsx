@@ -108,7 +108,7 @@ useEffect(()=>{
                     className="w-20 h-20 object-contain rounded-xl"
                   />
                   <div className="flex-1 min-w-0">
-                    <h3 className="text-lg font-semibold">{items.name}</h3>
+                    <h3 className="text-lg font-semibold truncate">{items.name}</h3>
                     <p className="text-sm text-gray-300">
                       {" "}
                       الكمية: {items.quantity}
